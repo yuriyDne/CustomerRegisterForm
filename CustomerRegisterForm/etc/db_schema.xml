@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table comment="Country table" engine="innodb" name="yt_country" resource="default">
+		<column length="2" name="iso2_code" nullable="false" xsi:type="varchar" />
+		<column length="3" name="iso3_code" nullable="false" xsi:type="varchar"/>
+		<column length="100" name="name" nullable="false" xsi:type="varchar"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="iso2_code"/>
+        </constraint>
+    </table>
+	<table comment="Customer Profile Table" engine="innodb" name="yt_customer_profile" resource="yt">
+		<column comment="Entity Id" identity="true" name="entity_id" nullable="false" padding="6" unsigned="true" xsi:type="int"/>
+		<column length="100" name="name" nullable="false" xsi:type="varchar"/>
+		<column length="40" name="email" nullable="false" xsi:type="varchar"/>
+		<column length="40" name="phone" nullable="false" xsi:type="varchar"/>
+		<column length="100" name="address" nullable="false" xsi:type="varchar"/>
+		<column name="country_code" nullable="false" length="2" xsi:type="varchar"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="YT_CUSTOMER_PROFILE_COUNTRY_CODE_YT_COUNTRY_ISO2_CODE"
+                    table="yt_customer_profile" column="country_code" referenceTable="yt_country"
+                    referenceColumn="iso2_code"/>
+	</table>
+</schema>

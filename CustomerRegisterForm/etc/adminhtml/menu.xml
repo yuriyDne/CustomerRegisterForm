@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+        <add id="YT::top_level" module="YT_CustomerRegisterForm" resource="Magento_Backend::content" sortOrder="9999" title="YT"/>
+		<add action="yt_customerregisterform/customerprofile/index" id="YT_CustomerRegisterForm::yt_customerregisterform_customerprofile" module="YT_CustomerRegisterForm" parent="YT::top_level" resource="Magento_Backend::content" sortOrder="9999" title="CustomerProfile"/>
+	</menu>
+</config>

@@ -1,0 +1,10 @@
+<div id="customer_form" data-bind="scope:'customer_form'" class="customer-form-container">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#customer_form": {
+                "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+            }
+        }
+    </script>
+</div>

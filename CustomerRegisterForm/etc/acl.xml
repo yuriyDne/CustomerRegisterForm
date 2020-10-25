@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="YT_CustomerRegisterForm::CustomerProfile" sortOrder="10" title="CustomerProfile">
+					<resource id="YT_CustomerRegisterForm::CustomerProfile_save" sortOrder="10" title="Save CustomerProfile"/>
+					<resource id="YT_CustomerRegisterForm::CustomerProfile_delete" sortOrder="20" title="Delete CustomerProfile"/>
+					<resource id="YT_CustomerRegisterForm::CustomerProfile_update" sortOrder="30" title="Update CustomerProfile"/>
+					<resource id="YT_CustomerRegisterForm::CustomerProfile_view" sortOrder="40" title="View CustomerProfile"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,12 @@
+diff --git a/vendor/magento/framework/Setup/Declaration/Schema/etc/schema.xsd b/vendor/magento/framework/Setup/Declaration/Schema/etc/schema.xsd
+index 2fbab18..274a05f 100644
+--- a/vendor/magento/framework/Setup/Declaration/Schema/etc/schema.xsd
++++ b/vendor/magento/framework/Setup/Declaration/Schema/etc/schema.xsd
+@@ -101,6 +101,7 @@
+             <xs:enumeration value="default" />
+             <xs:enumeration value="checkout" />
+             <xs:enumeration value="sales" />
++            <xs:enumeration value="yt" />
+         </xs:restriction>
+     </xs:simpleType>
+ 

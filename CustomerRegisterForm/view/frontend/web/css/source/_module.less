@@ -1,0 +1,42 @@
+& when (@media-common = true) {
+    .yt-register-form-wrapper {
+        h1 {
+            text-align: center;
+        }
+        .field {
+            padding: 10px 0;
+        }
+        button {
+            background-color: #ffffff;
+            &:hover {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .yt-register-form-wrapper {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+
+        .field {
+            width: 40%;
+            padding: 10px 20px;
+            display: inline-block;
+
+            &.left {
+                text-align: left;
+            }
+            &.right {
+                text-align: right;
+            }
+        }
+    }
+}

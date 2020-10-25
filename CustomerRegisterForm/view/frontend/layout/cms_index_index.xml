@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main" remove="true" />
+        <referenceContainer name="columns">
+            <container name="yt.homepage.main" label="Main Content Container" htmlTag="div" htmlClass="column main">
+                <block class="Magento\Framework\View\Element\FormKey" name="formkey"/>
+                <container name="yt.homepage.form.wrapper" label="Form Wrapper" htmlTag="div" htmlClass="yt-register-form-wrapper">
+                    <container name="yt.homepage.form.title.wrapper" label="Form Wrapper" htmlTag="h1">
+                        <block class="Magento\Framework\View\Element\Text" name="yt.homepage.form.title">
+                            <arguments>
+                                <argument name="text" xsi:type="string">Form Title</argument>
+                            </arguments>
+                        </block>
+                    </container>
+                    <uiComponent name="customer_register_form" cacheable="false"/>
+                    <block class="Magento\Framework\View\Element\Template" cacheable="false" name="page.actions.toolbar" template="YT_CustomerRegisterForm::pageactions.phtml" after="-"/>
+                </container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

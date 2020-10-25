@@ -1,0 +1,26 @@
+{
+    "name": "yt/module-customerregisterform",
+    "description": "",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        },
+        {
+            "email": "yuralet@gmail.com",
+            "name": "\u042e\u0440\u0438\u0439 \u0422\u043a\u0430\u0447\u0435\u043d\u043a\u043e"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "YT\\CustomerRegisterForm\\": ""
+        }
+    }
+}

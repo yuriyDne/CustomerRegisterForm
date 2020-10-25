@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main" remove="true" />
+        <referenceContainer name="columns">
+            <container name="yt.homepage.main" label="Main Content Container" htmlTag="div" htmlClass="column main">
+                <block class="YT\CustomerRegisterForm\Block\CustomerFormBlock" name="customer.form" template="YT_CustomerRegisterForm::customer_form.phtml" cacheable="false">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="types" xsi:type="array">
+                                <item name="form.input" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                    <item name="provider" xsi:type="string">customerFormProvider</item>
+                                    <item name="deps" xsi:type="array">
+                                        <item name="0" xsi:type="string">customerFormProvider</item>
+                                    </item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                        <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                    </item>
+                                </item>
+                            </item>
+                            <item name="components" xsi:type="array">
+                                <item name="customerFormProvider" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+                                </item>
+                                <item name="customer_form" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/form</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="provider" xsi:type="string">customerFormProvider</item>
+                                    </item>
+                                    <item name="children" xsi:type="array">
+                                        <item name="customer_name" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                            <item name="dataScope" xsi:type="string">customerFormProvider.customer_name</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="sortOrder" xsi:type="string">10</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="source" xsi:type="string">customerFormProvider</item>
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="placeholder" xsi:type="string">Name</item>
+                                            </item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+                                        <item name="email" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                            <item name="dataScope" xsi:type="string">customerFormProvider.email</item>
+                                            <item name="sortOrder" xsi:type="string">20</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="source" xsi:type="string">customerFormProvider</item>
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="placeholder" xsi:type="string">Email</item>
+                                            </item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                                <item name="validate-email" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+
+                                        <item name="phone" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                            <item name="dataScope" xsi:type="string">customerFormProvider.phone</item>
+                                            <item name="sortOrder" xsi:type="string">30</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="source" xsi:type="string">customerFormProvider</item>
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="placeholder" xsi:type="string">Phone</item>
+                                            </item>
+                                        </item>
+                                        <item name="address" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                            <item name="dataScope" xsi:type="string">customerFormProvider.address</item>
+                                            <item name="sortOrder" xsi:type="string">40</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="source" xsi:type="string">customerFormProvider</item>
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="placeholder" xsi:type="string">Address</item>
+                                            </item>
+                                        </item>
+
+                                        <item name="random_check" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                            <item name="dataScope" xsi:type="string">customerFormProvider.random_check</item>
+                                            <item name="sortOrder" xsi:type="string">50</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="source" xsi:type="string">customerFormProvider</item>
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/checkbox</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="label" xsi:type="string">Random check</item>
+                                            </item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+                                        <item name="country" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/element/select</item>
+                                            <item name="dataScope" xsi:type="string">customerFormProvider.country</item>
+                                            <item name="sortOrder" xsi:type="string">60</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="source" xsi:type="string">customerFormProvider</item>
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="options" xsi:type="array">customerFormProvider.dictionaries.country_id</item>
+                                                <item name="placeholder" xsi:type="string">Country</item>
+                                            </item>
+                                            <item name="imports" xsi:type="array">
+                                                <item name="initialOptions" xsi:type="string">index = customerFormProvider:dictionaries.country_id</item>
+                                                <item name="setOptions" xsi:type="string">index = customerFormProvider:dictionaries.country_id</item>
+                                            </item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+                                        <item name="btn_reset" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/components/button</item>
+                                            <item name="sortOrder" xsi:type="string">70</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/button</item>
+                                                <item name="actions" xsi:type="array">
+                                                    <item name="0" xsi:type="array">
+                                                        <item name="actionName" xsi:type="string">reset</item>
+                                                        <item name="targetName" xsi:type="string">index = customer_form</item>
+                                                    </item>
+                                                </item>
+                                                <item name="title" xsi:type="string">Clear</item>
+                                                <item name="template" xsi:type="string">ui/form/components/button/container</item>
+                                                <item name="buttonClasses" xsi:type="string">customer-form-reset-button</item>
+                                                <item name="imports" xsi:type="array">
+                                                    <item name="childError" xsi:type="string">index = customerFormProvider:error</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="btn_save" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Ui/js/form/components/button</item>
+                                            <item name="sortOrder" xsi:type="string">80</item>
+                                            <item name="provider" xsi:type="string">customerFormProvider</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="elementTmpl" xsi:type="string">ui/form/element/button</item>
+                                                <item name="actions" xsi:type="array">
+                                                    <item name="0" xsi:type="array">
+                                                        <item name="actionName" xsi:type="string">save</item>
+                                                        <item name="targetName" xsi:type="string">index = customer_form</item>
+                                                    </item>
+                                                </item>
+                                                <item name="title" xsi:type="string">Submit</item>
+                                                <item name="template" xsi:type="string">ui/form/components/button/container</item>
+                                                <item name="buttonClasses" xsi:type="string">customer-form-save-button</item>
+                                                <item name="imports" xsi:type="array">
+                                                    <item name="childError" xsi:type="string">index = customerFormProvider:error</item>
+                                                </item>
+                                            </item>
+                                        </item>
+
+                                    </item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

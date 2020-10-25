@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="YT\CustomerRegisterForm\Api\CountryRepositoryInterface" type="YT\CustomerRegisterForm\Model\CountryRepository"/>
+	<preference for="YT\CustomerRegisterForm\Api\Data\CountryInterface" type="YT\CustomerRegisterForm\Model\Data\Country"/>
+	<preference for="YT\CustomerRegisterForm\Api\Data\CountrySearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="YT\CustomerRegisterForm\Api\CustomerProfileRepositoryInterface" type="YT\CustomerRegisterForm\Model\CustomerProfileRepository"/>
+	<preference for="YT\CustomerRegisterForm\Api\Data\CustomerProfileInterface" type="YT\CustomerRegisterForm\Model\Data\CustomerProfile"/>
+	<preference for="YT\CustomerRegisterForm\Api\Data\CustomerProfileSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="YT\CustomerRegisterForm\Model\ResourceModel\CustomerProfile\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">yt_customer_profile</argument>
+			<argument name="resourceModel" xsi:type="string">YT\CustomerRegisterForm\Model\ResourceModel\CustomerProfile\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="yt_customerregisterform_customerprofile_listing_data_source" xsi:type="string">YT\CustomerRegisterForm\Model\ResourceModel\CustomerProfile\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+    <type name="YT\CustomerRegisterForm\Block\CustomerFormBlock">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="countryOptions" xsi:type="object">YT\CustomerRegisterForm\Block\LayoutProcessor\AddCountryOptions</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="YT\CustomerRegisterForm\Model\Logger\DebugHandler">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/import_country/debug.log</argument>
+        </arguments>
+    </type>
+    <type name="YT\CustomerRegisterForm\Model\Logger\ErrorHandler">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/import_country/error.log</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="YT\CustomerRegisterForm\Model\Logger\Logger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">YT\CustomerRegisterForm\Model\Logger\DebugHandler</item>
+                <item name="error" xsi:type="object">YT\CustomerRegisterForm\Model\Logger\ErrorHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="YT\CustomerRegisterForm\Service\ImportCountryService">
+        <arguments>
+            <argument name="logger" xsi:type="object">YT\CustomerRegisterForm\Model\Logger\Logger</argument>
+        </arguments>
+    </type>
+
+</config>

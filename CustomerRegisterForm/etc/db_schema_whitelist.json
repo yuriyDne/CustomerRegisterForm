@@ -1,0 +1,28 @@
+{
+    "yt_country": {
+        "column": {
+            "country_id": true,
+            "iso2_code": true,
+            "iso3_code": true,
+            "name": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "yt_customer_profile": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "email": true,
+            "phone": true,
+            "address": true,
+            "country_id": true,
+            "country_code": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "YT_CUSTOMER_PROFILE_COUNTRY_CODE_YT_COUNTRY_ISO2_CODE": true
+        }
+    }
+}

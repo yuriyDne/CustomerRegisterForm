@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ */
+?>
+<?php if ($block->getChildHtml()) :?>
+    <div class="page-actions floating-header" <?= /* @noEscape */ $block->getUiId('content-header') ?>>
+        <?= $block->getChildHtml() ?>
+    </div>
+<?php endif; ?>
+
+<?php
+
+/** @var \Magento\Framework\View\Element\FormKey $formKeyBlock */
+$formKeyBlock = $block->getLayout()->getBlock('formkey');
+?>
+
+<script>
+    window.FORM_KEY = "<?=$formKeyBlock->getFormKey()?>";
+</script>
